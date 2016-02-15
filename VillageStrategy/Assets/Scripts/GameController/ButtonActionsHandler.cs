@@ -8,12 +8,25 @@ public class ButtonActionsHandler : MonoBehaviour {
 
     private List<GameObject> allTiles;
 
+    private TileTypeHandler tileType;
+    private TileProperties tileProperties;
+
 	void Start () {
         findAllTiles();
 	}
 	
 	void Update () {
-	    switch(getSelectedTileType())
+        
+        if(getSelectedTile() == null)
+        {
+            soilButtons.SetActive(false);
+            return;
+        }
+
+        tileType = getSelectedTile().GetComponent<TileTypeHandler>();
+        tileProperties = getSelectedTile().GetComponent<TileProperties>();
+
+        switch(tileType.tileType)
         {
             case TileType.Soil:
                 {
@@ -32,6 +45,30 @@ public class ButtonActionsHandler : MonoBehaviour {
                     break;
                 }
         }
+
+        /*
+        switch (getSelectedTileType())
+        {
+            case TileType.Soil:
+                {
+
+                    soilButtons.SetActive(true);
+                    break;
+                }
+            case TileType.Water:
+                {
+                    soilButtons.SetActive(false);
+                    break;
+                }
+            case TileType.None:
+                {
+                    soilButtons.SetActive(false);
+                    break;
+                }
+        }
+        */
+
+
 	}
 
 
@@ -45,6 +82,18 @@ public class ButtonActionsHandler : MonoBehaviour {
             }
         }
         return TileType.None;
+    }
+
+    private GameObject getSelectedTile()
+    {
+        foreach (GameObject g in allTiles)
+        {
+            if (g.GetComponent<TileSelectionHandler>().selected)
+            {
+                return g;
+            }
+        }
+        return null;
     }
 
     void findAllTiles()
