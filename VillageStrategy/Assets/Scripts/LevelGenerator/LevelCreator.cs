@@ -21,6 +21,8 @@ public class LevelCreator : MonoBehaviour {
     public int mapSize;
     public float tileDistance;
 
+    public float minimumRandomizeOffset;
+    public float maximumRandomizeOffset;
 
     float tileSize;
     public Vector3 pivot;
@@ -68,7 +70,7 @@ public class LevelCreator : MonoBehaviour {
 
     float getSeed(int x,int y)
     {
-        float r = Random.Range(0f,1f);
+        float r = Random.Range(minimumRandomizeOffset,maximumRandomizeOffset);
         return Mathf.PerlinNoise((float)(x + r), (float)(y + r));
     }
 

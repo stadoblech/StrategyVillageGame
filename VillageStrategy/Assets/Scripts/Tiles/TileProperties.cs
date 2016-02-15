@@ -16,10 +16,7 @@ public class TileProperties : MonoBehaviour {
         get; set;
     }
 
-    public Vector2 PositionOnGrid
-    {
-        get;set;
-    }
+    public Vector2 PositionOnGrid;
 
     public int TileType
     {

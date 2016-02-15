@@ -621,6 +621,8 @@ MonoBehaviour:
   tile: {fileID: 125632, guid: 3308689f310f9fd45ab118fb9fa9a3e4, type: 2}
   mapSize: 8
   tileDistance: 0.2
+  minimumRandomizeOffset: 0
+  maximumRandomizeOffset: 1
   pivot: {x: 0, y: 0, z: 0}
 --- !u!4 &1499120222
 Transform:

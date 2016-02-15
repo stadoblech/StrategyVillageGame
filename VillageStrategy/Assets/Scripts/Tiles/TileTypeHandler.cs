@@ -22,6 +22,16 @@ public class TileTypeHandler : MonoBehaviour {
 	void Start () {
         tileProperties = GetComponent<TileProperties>();
 
+        setTileType();
+    }
+	
+	// Update is called once per frame
+	void Update () {
+	
+	}
+
+    void setTileType()
+    {
         if (tileProperties.TileType >= soilType.minimumCoeficient && tileProperties.TileType <= soilType.maximumCoeficient)
         {
             tileType = TileType.Soil;
@@ -42,9 +52,4 @@ public class TileTypeHandler : MonoBehaviour {
             tileType = TileType.Mountains;
         }
     }
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
 }

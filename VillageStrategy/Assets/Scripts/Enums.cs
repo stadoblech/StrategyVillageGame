@@ -5,7 +5,7 @@ using System.Collections;
 
 public enum TileType
 {
-    None,Soil,Water,Woods,Mountains
+    None,Soil,Water,Woods,Mountains,MainHouse
 }
 
 public class Enums : MonoBehaviour {

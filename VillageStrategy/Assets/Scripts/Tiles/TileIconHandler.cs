@@ -11,6 +11,7 @@ public class TileIconHandler : MonoBehaviour {
     public Sprite waterIcon;
     public Sprite treesIcon;
     public Sprite mountainIcon;
+    public Sprite houseIcon;
 
     SpriteRenderer sr;
 
@@ -47,6 +48,12 @@ public class TileIconHandler : MonoBehaviour {
             case TileType.Mountains:
                 {
                     sr.sprite = mountainIcon;
+                    break;
+                }
+
+            case TileType.MainHouse:
+                {
+                    sr.sprite = houseIcon;
                     break;
                 }
         }
