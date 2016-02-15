@@ -1,9 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+
+
 public enum TileType
 {
-    None,Soil,Water
+    None,Soil,Water,Woods,Mountains
 }
 
 public class Enums : MonoBehaviour {

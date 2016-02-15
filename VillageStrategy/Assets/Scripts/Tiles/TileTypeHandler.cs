@@ -14,6 +14,8 @@ public class TileTypeHandler : MonoBehaviour {
     public TileType tileType;
     public TypeContainer soilType;
     public TypeContainer waterType;
+    public TypeContainer woodsType;
+    public TypeContainer mountainsType;
 
     TileProperties tileProperties;
 
@@ -28,6 +30,16 @@ public class TileTypeHandler : MonoBehaviour {
         if (tileProperties.TileType >= waterType.minimumCoeficient && tileProperties.TileType <= waterType.maximumCoeficient)
         {
             tileType = TileType.Water;
+        }
+
+        if (tileProperties.TileType >= woodsType.minimumCoeficient && tileProperties.TileType <= woodsType.maximumCoeficient)
+        {
+            tileType = TileType.Woods;
+        }
+
+        if (tileProperties.TileType >= mountainsType.minimumCoeficient && tileProperties.TileType <= mountainsType.maximumCoeficient)
+        {
+            tileType = TileType.Mountains;
         }
     }
 	
