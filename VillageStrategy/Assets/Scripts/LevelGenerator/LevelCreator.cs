@@ -1,12 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public  class Tile
+public  class MapTile
 {
     public Vector2 position;
     public float seed;
 
-    public Tile()
+    public MapTile()
     {
         position = new Vector2();
     }
@@ -27,10 +27,10 @@ public class LevelCreator : MonoBehaviour {
     float tileSize;
     public Vector3 pivot;
 
-    public Tile[,] map;
+    public MapTile[,] map;
 
 	void Awake () {
-        map = new Tile[mapSize, mapSize];
+        map = new MapTile[mapSize, mapSize];
         tileSize = tile.GetComponent<SpriteRenderer>().bounds.size.x;
         pivot = calculatePivotPosition();
         createMap();
@@ -50,7 +50,7 @@ public class LevelCreator : MonoBehaviour {
             for(int y = 0;y<map.GetLength(1);y++)
             {
                 Vector3 pos = new Vector2(actulalTilePosition.x,actulalTilePosition.y + y * (tileSize+tileDistance));
-                map[x, y] = new Tile();
+                map[x, y] = new MapTile();
                 map[x, y].position = pos + pivot;
             }
         }

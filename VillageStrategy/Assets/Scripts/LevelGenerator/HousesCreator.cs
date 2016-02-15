@@ -12,9 +12,6 @@ public class HousesCreator : MonoBehaviour {
     bool firstUpdate = false;
 
 	void Start () {
-        //Invoke("createHouses",2);
-
-        //createHouses();
 	}
 	
 	// Update is called once per frame
@@ -46,10 +43,10 @@ public class HousesCreator : MonoBehaviour {
             TileProperties p = tile.GetComponent<TileProperties>();
             TileTypeHandler type = tile.GetComponent<TileTypeHandler>();
 
-            if (getTileType(p.PositionOnGrid.x,p.PositionOnGrid.y-1) == TileType.Soil ||
-                getTileType(p.PositionOnGrid.x, p.PositionOnGrid.y +1) == TileType.Soil ||
-                getTileType(p.PositionOnGrid.x-1, p.PositionOnGrid.y) == TileType.Soil ||
-                getTileType(p.PositionOnGrid.x+1, p.PositionOnGrid.y) == TileType.Soil
+            if (Tile.getTileType(p.PositionOnGrid.x,p.PositionOnGrid.y-1) == TileType.Soil ||
+                Tile.getTileType(p.PositionOnGrid.x, p.PositionOnGrid.y +1) == TileType.Soil ||
+                Tile.getTileType(p.PositionOnGrid.x-1, p.PositionOnGrid.y) == TileType.Soil ||
+                Tile.getTileType(p.PositionOnGrid.x+1, p.PositionOnGrid.y) == TileType.Soil
                 )
             {
                 found = true;
@@ -58,9 +55,6 @@ public class HousesCreator : MonoBehaviour {
             {
                 randomIndex = UnityEngine.Random.Range(0, tiles.Count);
             }
-
-
-            
             timeout++;
 
             if(timeout > 100)
@@ -70,6 +64,7 @@ public class HousesCreator : MonoBehaviour {
         }
     }
 
+    /*
     public static TileType getTileType(float posX,float posY)
     {
 
@@ -92,4 +87,5 @@ public class HousesCreator : MonoBehaviour {
         }
         return TileType.None;
     }
+    */
 }
