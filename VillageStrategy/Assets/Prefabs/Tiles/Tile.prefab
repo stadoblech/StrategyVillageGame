@@ -100,6 +100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   colorTesting: 0
+  PositionOnGrid: {x: 0, y: 0}
 --- !u!114 &11467120
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -115,6 +116,7 @@ MonoBehaviour:
   waterIcon: {fileID: 21300000, guid: 56aa6df31f2545e4882428a396ae0eff, type: 3}
   treesIcon: {fileID: 21300000, guid: a336b10b7809d154bb9bf85841b3e253, type: 3}
   mountainIcon: {fileID: 21300000, guid: 5544230381939524ba06e71786a601bb, type: 3}
+  houseIcon: {fileID: 21300000, guid: 17ca08190ab764b4eaf6fc572213694a, type: 3}
 --- !u!114 &11478588
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -315,6 +317,11 @@ Prefab:
       propertyPath: mountainsType.maximumCoeficient
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: houseIcon
+      value: 
+      objectReference: {fileID: 21300000, guid: 17ca08190ab764b4eaf6fc572213694a,
+        type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 125632}
