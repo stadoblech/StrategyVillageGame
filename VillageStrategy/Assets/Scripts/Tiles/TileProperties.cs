@@ -30,7 +30,7 @@ public class TileProperties : MonoBehaviour {
     {
         get
         {
-            return getNumberOnFloatPosition(Seed,2);
+            return getNumberOnFloatPosition(Seed,2,2);
         }
     }
 
@@ -56,6 +56,25 @@ public class TileProperties : MonoBehaviour {
         string test = num.Substring(position,1);
 
         int result = Int32.Parse(test);
+
+        if (result == 0)
+            result = 1;
         return result;
     }
+
+    public int getNumberOnFloatPosition(float number, int position,int length)
+    {
+        position += 1;
+        string num = number.ToString();
+
+        string test = num.Substring(position, length);
+
+        int result = Int32.Parse(test);
+
+        if (result < 10)
+            result += 10;
+        return result;
+    }
+
+
 }

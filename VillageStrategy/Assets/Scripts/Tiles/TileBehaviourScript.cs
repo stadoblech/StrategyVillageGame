@@ -2,7 +2,7 @@
 using System.Collections;
 
 [System.Serializable]
-public class SoilTile:BaseTile
+public class SoilTile
 {
     [SerializeField]
     public bool growing;
@@ -25,6 +25,8 @@ public class TileBehaviourScript : MonoBehaviour {
 
     public bool populated;
     public SoilTile soil;
+
+
 
 	void Start () {
         Invoke("initialPopulate",0.5f);

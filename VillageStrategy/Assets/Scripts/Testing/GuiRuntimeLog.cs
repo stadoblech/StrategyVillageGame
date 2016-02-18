@@ -44,7 +44,7 @@ public class GuiRuntimeLog : MonoBehaviour {
             {
                 seedToDisplay = o.GetComponent<TileProperties>().Seed;
                 positionOnGrid = o.GetComponent<TileProperties>().PositionOnGrid;
-                efficiencyToDisplay = o.GetComponent<TileBehaviourScript>().soil.efficiency;
+                efficiencyToDisplay = o.GetComponent<TileProperties>().tileEfficiency;
             }
         }
     }
