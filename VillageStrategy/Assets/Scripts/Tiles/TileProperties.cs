@@ -18,11 +18,19 @@ public class TileProperties : MonoBehaviour {
 
     public Vector2 PositionOnGrid;
 
-    public int TileType
+    public int TileTypeNumerous
     {
         get
         {
             return getNumberOnFloatPosition(Seed,1);
+        }
+    }
+
+    public int tileEfficiency
+    {
+        get
+        {
+            return getNumberOnFloatPosition(Seed,2);
         }
     }
 

@@ -155,6 +155,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 345245904}
   - 114: {fileID: 345245905}
+  - 114: {fileID: 345245906}
   m_Layer: 0
   m_Name: GameController
   m_TagString: Untagged
@@ -185,6 +186,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f2714d922465914381441ba3d3b0f7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &345245906
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 345245903}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea13157a95cbe8045976e6598704f26e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  numberOfPeopleOnStart: 4
+  amountOfFoodOnStart: 10
+  personConsumptionPerMinute: 1
 --- !u!1 &411351623
 GameObject:
   m_ObjectHideFlags: 0
@@ -904,7 +919,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d90a9adad69e7d408147f5e06bf239b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  boxPosition: {x: 700, y: 50}
+  boxPosition: {x: 600, y: 50}
   boxSize: {x: 200, y: 100}
 --- !u!4 &1557117638
 Transform:

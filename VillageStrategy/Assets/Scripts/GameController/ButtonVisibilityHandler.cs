@@ -76,7 +76,7 @@ public class ButtonVisibilityHandler : MonoBehaviour {
         {
             commonButtons.transform.Find("populate").gameObject.SetActive(false);
         }
-        else if(!actualTileBehaviour.populated && areTilesAroundPopulated())
+        else if(!actualTileBehaviour.populated && areTilesAroundPopulated() && Resources.currentPeople > 0)
         {
             commonButtons.transform.Find("populate").gameObject.SetActive(true);
         }else

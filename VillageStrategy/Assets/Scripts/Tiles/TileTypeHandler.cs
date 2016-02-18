@@ -32,22 +32,22 @@ public class TileTypeHandler : MonoBehaviour {
 
     void setTileType()
     {
-        if (tileProperties.TileType >= soilType.minimumCoeficient && tileProperties.TileType <= soilType.maximumCoeficient)
+        if (tileProperties.TileTypeNumerous >= soilType.minimumCoeficient && tileProperties.TileTypeNumerous <= soilType.maximumCoeficient)
         {
             tileType = TileType.Soil;
         }
 
-        if (tileProperties.TileType >= waterType.minimumCoeficient && tileProperties.TileType <= waterType.maximumCoeficient)
+        if (tileProperties.TileTypeNumerous >= waterType.minimumCoeficient && tileProperties.TileTypeNumerous <= waterType.maximumCoeficient)
         {
             tileType = TileType.Water;
         }
 
-        if (tileProperties.TileType >= woodsType.minimumCoeficient && tileProperties.TileType <= woodsType.maximumCoeficient)
+        if (tileProperties.TileTypeNumerous >= woodsType.minimumCoeficient && tileProperties.TileTypeNumerous <= woodsType.maximumCoeficient)
         {
             tileType = TileType.Woods;
         }
 
-        if (tileProperties.TileType >= mountainsType.minimumCoeficient && tileProperties.TileType <= mountainsType.maximumCoeficient)
+        if (tileProperties.TileTypeNumerous >= mountainsType.minimumCoeficient && tileProperties.TileTypeNumerous <= mountainsType.maximumCoeficient)
         {
             tileType = TileType.Mountains;
         }

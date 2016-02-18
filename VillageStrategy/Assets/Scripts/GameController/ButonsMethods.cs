@@ -24,5 +24,6 @@ public class ButonsMethods : MonoBehaviour {
     public void populateTile()
     {
         Tile.getSelectedTile().GetComponent<TileBehaviourScript>().populated = true;
+        Resources.currentPeople--;
     }
 }

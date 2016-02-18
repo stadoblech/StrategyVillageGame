@@ -63,29 +63,4 @@ public class HousesCreator : MonoBehaviour {
             }
         }
     }
-
-    /*
-    public static TileType getTileType(float posX,float posY)
-    {
-
-        List<GameObject> tiles = new List<GameObject>();
-        tiles.AddRange(GameObject.FindGameObjectsWithTag("Tile"));
-
-        TileProperties p;
-        TileTypeHandler type;
-
-        foreach(GameObject o in tiles)
-        {
-            p = o.GetComponent<TileProperties>();
-            type = o.GetComponent<TileTypeHandler>();
-
-            if(p.PositionOnGrid.x == posX && p.PositionOnGrid.y == posY)
-            {
-                return type.tileType;
-                //return o.GetComponent<TileTypeHandler>().tileType;
-            }
-        }
-        return TileType.None;
-    }
-    */
 }

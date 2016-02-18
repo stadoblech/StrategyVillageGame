@@ -9,6 +9,7 @@ public class GuiRuntimeLog : MonoBehaviour {
 
     private float seedToDisplay;
     private Vector2 positionOnGrid;
+    private float efficiencyToDisplay;
 
     private List<GameObject> tiles;
 
@@ -24,8 +25,11 @@ public class GuiRuntimeLog : MonoBehaviour {
 
     void OnGUI()
     {
-        GUI.Box(new Rect(boxPosition,boxSize),
-            seedToDisplay.ToString()+"\n"+positionOnGrid);
+        GUI.Box(new Rect(boxPosition, boxSize),
+            seedToDisplay.ToString() + "\n" +
+            positionOnGrid + "\n" +
+            Resources.currentFood + "\n" +
+            efficiencyToDisplay);
     }
 
     void updateTilePreferences()
@@ -40,6 +44,7 @@ public class GuiRuntimeLog : MonoBehaviour {
             {
                 seedToDisplay = o.GetComponent<TileProperties>().Seed;
                 positionOnGrid = o.GetComponent<TileProperties>().PositionOnGrid;
+                efficiencyToDisplay = o.GetComponent<TileBehaviourScript>().soil.efficiency;
             }
         }
     }

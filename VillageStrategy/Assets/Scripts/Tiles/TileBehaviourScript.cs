@@ -2,7 +2,7 @@
 using System.Collections;
 
 [System.Serializable]
-public class SoilTile
+public class SoilTile:BaseTile
 {
     [SerializeField]
     public bool growing;
@@ -11,7 +11,7 @@ public class SoilTile
     {
         if(growing)
         {
-
+            
         }
     }
 
@@ -24,7 +24,6 @@ public class SoilTile
 public class TileBehaviourScript : MonoBehaviour {
 
     public bool populated;
-
     public SoilTile soil;
 
 	void Start () {
@@ -33,7 +32,14 @@ public class TileBehaviourScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-
+        switch(GetComponent<TileTypeHandler>().tileType)
+        {
+            case TileType.Soil:
+                {
+                    soil.update();
+                    break;
+                }
+        }
     }
 
     void initialPopulate()
