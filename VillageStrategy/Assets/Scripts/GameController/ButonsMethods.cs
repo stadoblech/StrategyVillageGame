@@ -13,17 +13,19 @@ public class ButonsMethods : MonoBehaviour {
 
     public void startAutoGrow()
     {
-        Tile.getSelectedTile().GetComponent<TileBehaviourScript>().soil.growing = true;
+        //Tile.getSelectedTile().GetComponent<TileScriptsBehaviourHandler>().soil.growing = true;
+        Tile.getSelectedTile().GetComponent<TileSoilBehaviour>().growing = true;
     }
 
     public void stopAutoGrow()
     {
-        Tile.getSelectedTile().GetComponent<TileBehaviourScript>().soil.growing = false;
+        //Tile.getSelectedTile().GetComponent<TileScriptsBehaviourHandler>().soil.growing = false;
+        Tile.getSelectedTile().GetComponent<TileSoilBehaviour>().growing = false;
     }
 
     public void populateTile()
     {
-        Tile.getSelectedTile().GetComponent<TileBehaviourScript>().populated = true;
+        Tile.getSelectedTile().GetComponent<TileScriptsBehaviourHandler>().populated = true;
         Resources.currentPeople--;
     }
 }

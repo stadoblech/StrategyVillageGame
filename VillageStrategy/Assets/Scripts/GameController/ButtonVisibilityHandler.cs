@@ -9,7 +9,7 @@ public class ButtonVisibilityHandler : MonoBehaviour {
 
     private TileTypeHandler actualTileType;
     private TileProperties actualTileProperties;
-    private TileBehaviourScript actualTileBehaviour;
+    private TileScriptsBehaviourHandler actualTileBehaviour;
 
     private GameObject activeTileObject;
 
@@ -28,7 +28,7 @@ public class ButtonVisibilityHandler : MonoBehaviour {
         activeTileObject = Tile.getSelectedTile();
         actualTileType = activeTileObject.GetComponent<TileTypeHandler>();
         actualTileProperties = activeTileObject.GetComponent<TileProperties>();
-        actualTileBehaviour = activeTileObject.GetComponent<TileBehaviourScript>();
+        actualTileBehaviour = activeTileObject.GetComponent<TileScriptsBehaviourHandler>();
 
         handlePopulateButton();
 
@@ -39,8 +39,8 @@ public class ButtonVisibilityHandler : MonoBehaviour {
                 case TileType.Soil:
                     {
                         soilButtons.SetActive(true);
-
-                        if (actualTileBehaviour.soil.growing)
+                        
+                        if(activeTileObject.GetComponent<TileSoilBehaviour>().growing)
                         {
                             soilButtons.transform.Find("stopGrow").gameObject.SetActive(true);
                             soilButtons.transform.Find("startGrow").gameObject.SetActive(false);
@@ -50,6 +50,18 @@ public class ButtonVisibilityHandler : MonoBehaviour {
                             soilButtons.transform.Find("stopGrow").gameObject.SetActive(false);
                             soilButtons.transform.Find("startGrow").gameObject.SetActive(true);
                         }
+                        /*
+                        if (actualTileBehaviour.soil.growing)
+                        {
+                            soilButtons.transform.Find("stopGrow").gameObject.SetActive(true);
+                            soilButtons.transform.Find("startGrow").gameObject.SetActive(false);
+                        }
+                        else
+                        {
+                            soilButtons.transform.Find("stopGrow").gameObject.SetActive(true);
+                            soilButtons.transform.Find("startGrow").gameObject.SetActive(false);
+                        }
+                        */
                         break;
                     }
                 case TileType.Water:
@@ -89,7 +101,7 @@ public class ButtonVisibilityHandler : MonoBehaviour {
     {
         foreach(GameObject o in Tile.getObjectsAroundSelected())
         {
-            if(o.GetComponent<TileBehaviourScript>().populated)
+            if(o.GetComponent<TileScriptsBehaviourHandler>().populated)
             {
                 return true;
             }
