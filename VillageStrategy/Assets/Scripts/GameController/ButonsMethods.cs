@@ -28,4 +28,9 @@ public class ButonsMethods : MonoBehaviour {
         Tile.getSelectedTile().GetComponent<TileScriptsBehaviourHandler>().populated = true;
         Resources.currentPeople--;
     }
+
+    public void changeToHouse()
+    {
+        Tile.getSelectedTile().GetComponent<TileTypeHandler>().tileType = TileType.MainHouse;
+    }
 }

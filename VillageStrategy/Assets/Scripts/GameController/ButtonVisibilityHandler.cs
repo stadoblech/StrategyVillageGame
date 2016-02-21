@@ -50,18 +50,6 @@ public class ButtonVisibilityHandler : MonoBehaviour {
                             soilButtons.transform.Find("stopGrow").gameObject.SetActive(false);
                             soilButtons.transform.Find("startGrow").gameObject.SetActive(true);
                         }
-                        /*
-                        if (actualTileBehaviour.soil.growing)
-                        {
-                            soilButtons.transform.Find("stopGrow").gameObject.SetActive(true);
-                            soilButtons.transform.Find("startGrow").gameObject.SetActive(false);
-                        }
-                        else
-                        {
-                            soilButtons.transform.Find("stopGrow").gameObject.SetActive(true);
-                            soilButtons.transform.Find("startGrow").gameObject.SetActive(false);
-                        }
-                        */
                         break;
                     }
                 case TileType.Water:
@@ -70,6 +58,11 @@ public class ButtonVisibilityHandler : MonoBehaviour {
                         break;
                     }
                 case TileType.None:
+                    {
+                        soilButtons.SetActive(false);
+                        break;
+                    }
+                case TileType.MainHouse:
                     {
                         soilButtons.SetActive(false);
                         break;

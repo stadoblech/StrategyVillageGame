@@ -10,10 +10,14 @@ public class TileScriptsBehaviourHandler : MonoBehaviour {
 	void Start () {
         Invoke("initialPopulate", 0.5f);
 	}
-	
-	// Update is called once per frame
-	void Update () {
+
+    // Update is called once per frame
+    void Update()
+    {
         actualType = GetComponent<TileTypeHandler>().tileType;
+
+        Invoke("updateTileType", 0.7f);
+
     }
 
     void initialPopulate()
@@ -24,6 +28,30 @@ public class TileScriptsBehaviourHandler : MonoBehaviour {
             populated = false;
 
         addBehaviourScripts();
+    }
+
+    void updateTileType()
+    {
+        switch (actualType)
+        {
+            case (TileType.Soil):
+                {
+                    GetComponent<TileWoodsBehaviour>().enabled = false;
+                    GetComponent<TileSoilBehaviour>().enabled = true;
+                    break;
+                }
+            case TileType.Woods:
+                {
+                    GetComponent<TileSoilBehaviour>().enabled = false;
+                    GetComponent<TileWoodsBehaviour>().enabled = true;
+                    break;
+                }
+            case TileType.MainHouse:
+                {
+                    GetComponent<TileSoilBehaviour>().enabled = false;
+                    break;
+                }
+        }
     }
 
     void addBehaviourScripts()
@@ -41,7 +69,6 @@ public class TileScriptsBehaviourHandler : MonoBehaviour {
         {
             case (TileType.Soil):
                 {
-                    
                     GetComponent<TileSoilBehaviour>().enabled = true;
                     break;
                 }
