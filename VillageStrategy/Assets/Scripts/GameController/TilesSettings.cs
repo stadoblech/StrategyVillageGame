@@ -18,7 +18,6 @@ public class TilesSettings : MonoBehaviour {
 	
 	}
 	
-	// Update is called once per frame
 	void Update () {
 	
 	}

@@ -5,6 +5,7 @@ public class Resources : MonoBehaviour {
 
     public int numberOfPeopleOnStart;
     public static int currentPeople;
+    public static int availablePeople;
 
     public float amountOfFoodOnStart;
     public static float currentFood;
@@ -14,6 +15,7 @@ public class Resources : MonoBehaviour {
 
 	void Start () {
         currentPeople = numberOfPeopleOnStart;
+        availablePeople = numberOfPeopleOnStart;
         currentFood = amountOfFoodOnStart;
 
         InvokeRepeating("consumptionUpdate",0,1f);

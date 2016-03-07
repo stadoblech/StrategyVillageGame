@@ -153,9 +153,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94dfd5106117d2d45b53efdd0b469b74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  occupied: 0
-  soil:
-    growing: 0
+  populated: 0
 --- !u!212 &21235214
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -337,6 +335,10 @@ Prefab:
       value: 
       objectReference: {fileID: 21300000, guid: 17ca08190ab764b4eaf6fc572213694a,
         type: 3}
+    - target: {fileID: 0}
+      propertyPath: soil.timeNeedToProduce
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 125632}
